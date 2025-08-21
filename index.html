@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Franco De Alesandro — CV / Programador</title>
+  <meta name="description" content="CV de Franco De Alesandro: desarrollador de software con experiencia en .NET, Java, Angular, Vue.js, SQL Server y Xamarin." />
+  <meta property="og:title" content="Franco De Alesandro — Programador" />
+  <meta property="og:description" content="Desarrollador full‑stack con experiencia en TGV y proyectos para ART y banca. .NET, Java, Angular, Vue.js, SQL Server." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 630'%3E%3Crect width='1200' height='630' fill='%23111'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%23fff' font-size='56' font-family='Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, sans-serif'%3EFranco De Alesandro%3C/text%3E%3C/svg%3E" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23000'/%3E%3Ctext x='50' y='62' font-size='60' text-anchor='middle' fill='%23fff' font-family='Inter, system-ui' %3EF%3C/text%3E%3C/svg%3E" />
+  <style>
+    :root {
+      --bg: #0b0c0f;
+      --card: #12141a;
+      --muted: #cfd3dc;
+      --text: #eef2f7;
+      --accent: #7cddff;
+      --accent-2: #8b5cf6;
+      --border: #242a35;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+    }
+    @media (prefers-color-scheme: light){
+      :root { --bg:#f7fafc; --card:#ffffff; --text:#111827; --muted:#4b5563; --border:#e5e7eb; --shadow:0 8px 24px rgba(17,24,39,.08) }
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0; background: radial-gradient(1200px 800px at top right, rgba(124,221,255,.15), transparent), var(--bg);
+      color: var(--text); font: 16px/1.6 Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+    }
+    a { color: inherit; text-decoration: none; }
+    .wrap { max-width: 1100px; margin: 0 auto; padding: 24px; }
+    header { display:flex; align-items:center; justify-content:space-between; gap:16px; }
+    .brand { display:flex; align-items:center; gap:14px; }
+    .avatar {
+      width: 56px; height: 56px; border-radius: 14px; background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      display:grid; place-items:center; color:#0b0c0f; font-weight:800; box-shadow: var(--shadow);
+    }
+    nav { display:flex; gap:18px; flex-wrap:wrap; }
+    nav a { opacity:.85; padding:6px 10px; border-radius: 8px; border:1px solid transparent; }
+    nav a:hover { border-color: var(--border); opacity:1 }
+    .hero { display:grid; grid-template-columns: 1.2fr .8fr; gap:28px; align-items:center; margin: 28px 0 10px; }
+    .hero h1 { font-size: clamp(28px, 4vw, 44px); line-height:1.15; margin: 0 0 10px; }
+    .subtitle { font-size: clamp(16px, 2.2vw, 20px); color: var(--muted); margin: 0 0 18px; }
+    .badges { display:flex; flex-wrap:wrap; gap:10px; }
+    .badge { padding: 8px 12px; border-radius: 999px; border:1px solid var(--border); background: linear-gradient(180deg, rgba(255,255,255,.04), transparent); font-size: 13px; }
+    .cta { display:flex; gap:12px; margin-top: 18px; }
+    .btn { padding: 12px 16px; border-radius: 12px; border:1px solid var(--border); background: var(--card); box-shadow: var(--shadow); font-weight:600; }
+    .btn.primary { background: linear-gradient(135deg, var(--accent), var(--accent-2)); color:#0b0c0f; }
+    .grid { display:grid; grid-template-columns: repeat(12, 1fr); gap: 18px; }
+    .card { grid-column: span 12; background: var(--card); border:1px solid var(--border); border-radius: 18px; padding: 20px; box-shadow: var(--shadow); }
+    h2 { margin: 6px 0 12px; font-size: 22px; }
+    h3 { margin: 0 0 8px; font-size: 16px; letter-spacing:.2px }
+    .muted { color: var(--muted); font-size: 14px; }
+    .stack { display:flex; flex-wrap:wrap; gap: 8px; }
+    .stack .chip { font-size: 12px; padding: 6px 10px; border:1px dashed var(--border); border-radius: 999px; }
+    .exp { display:grid; grid-template-columns: 1fr 3fr; gap: 16px; border-top:1px dashed var(--border); padding-top: 14px; margin-top: 14px; }
+    .exp:first-of-type { border-top: none; padding-top:0; margin-top:0 }
+    .exp ul { margin: 8px 0 0 18px; }
+    .exp ul li { margin: 6px 0 }
+    .two-cols { display:grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    footer { margin: 28px 0 10px; display:flex; align-items:center; justify-content:space-between; gap:10px; flex-wrap:wrap; }
+    .contact { display:flex; gap:12px; flex-wrap:wrap; }
+    .hint { font-size: 12px; color: var(--muted); }
+    .print-tip { padding: 10px 12px; border:1px dashed var(--border); border-radius: 12px; }
+    @media (max-width: 880px){ .hero { grid-template-columns: 1fr } .two-cols{ grid-template-columns: 1fr } }
+
+    /* Print-friendly */
+    @media print {
+      body { background:#fff; color:#111 }
+      .btn, nav, .print-tip { display:none !important }
+      .card { box-shadow:none }
+      .wrap { padding:0 }
+      .avatar { box-shadow:none }
+    }
+  </style>
+  <script>
+    // Simple theme toggle (keeps things single-file)
+    function toggleTheme(){
+      const light = document.documentElement.dataset.theme === 'light';
+      if(light){ delete document.documentElement.dataset.theme; localStorage.removeItem('theme'); }
+      else { document.documentElement.dataset.theme = 'light'; localStorage.setItem('theme','light'); }
+    }
+    (function(){ if(localStorage.getItem('theme')==='light'){ document.documentElement.dataset.theme='light'; } })();
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Franco De Alesandro",
+    "description": "Desarrollador de software (.NET, Java, Angular, Vue.js, SQL Server, Xamarin)",
+    "email": "mailto:fdealesandro@tgv.com.ar",
+    "jobTitle": "Programador / Desarrollador de Software",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Caseros",
+      "addressRegion": "Buenos Aires",
+      "addressCountry": "AR"
+    },
+    "url": "",
+    "knowsAbout": [".NET", "C#", "Java", "Angular", "Vue.js", "SQL Server", "Xamarin", "TypeScript", "JavaScript", "APIs REST"],
+    "alumniOf": [{"@type":"CollegeOrUniversity","name":"UADE"}]
+  }
+  </script>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand" aria-label="Identidad">
+        <div class="avatar" aria-hidden="true">F</div>
+        <div>
+          <strong style="font-size:18px">Franco De Alesandro</strong><br/>
+          <span class="muted">Programador · Full‑Stack</span>
+        </div>
+      </div>
+      <nav aria-label="Secciones">
+        <a href="#sobre-mi">Sobre mí</a>
+        <a href="#experiencia">Experiencia</a>
+        <a href="#tecnica">Tecnología</a>
+        <a href="#educacion">Educación</a>
+        <a href="#contacto">Contacto</a>
+        <a class="btn" href="#" onclick="toggleTheme();return false" title="Alternar tema">Tema</a>
+      </nav>
+    </header>
+
+    <section class="hero" id="sobre-mi">
+      <div>
+        <h1>Desarrollador de software con foco en productos y calidad</h1>
+        <p class="subtitle">+4 años construyendo sistemas a medida para software factories y clientes corporativos. Experiencia en <strong>.NET</strong>, <strong>Java</strong>, <strong>Angular</strong>, <strong>Vue.js</strong>, <strong>SQL Server</strong> y <strong>Xamarin</strong>.</p>
+        <div class="badges">
+          <span class="badge">Full‑Stack</span>
+          <span class="badge">APIs REST</span>
+          <span class="badge">Gitflow · CI</span>
+          <span class="badge">Pruebas unitarias</span>
+          <span class="badge">Soporte & documentación</span>
+        </div>
+        <div class="cta">
+          <a class="btn primary" href="#contacto">Contactar</a>
+          <a class="btn" href="javascript:window.print()">Imprimir / Guardar PDF</a>
+        </div>
+      </div>
+      <div class="card">
+        <h2 style="margin-top:0">Resumen</h2>
+        <p>Programador con experiencia entregando features de negocio end‑to‑end, integrando bases de datos <strong>SQL Server</strong>, desarrollando <strong>front‑end</strong> moderno y manteniendo <strong>back‑end</strong> escalable. Trabajo en equipo con metodologías y buenas prácticas (gitflow, code review, SonarQube).</p>
+        <div class="stack" aria-label="Stack principal">
+          <span class="chip">C# · .NET</span>
+          <span class="chip">Java · Spring Boot</span>
+          <span class="chip">Angular</span>
+          <span class="chip">Vue.js</span>
+          <span class="chip">TypeScript</span>
+          <span class="chip">JavaScript</span>
+          <span class="chip">SQL Server</span>
+          <span class="chip">Xamarin</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="experiencia" class="grid" aria-label="Experiencia profesional">
+      <div class="card">
+        <h2>Experiencia</h2>
+
+        <article class="exp">
+          <div>
+            <h3>TGV · Desarrollador</h3>
+            <div class="muted">11/2018 — 12/2020</div>
+          </div>
+          <div>
+            <p><strong>Cliente:</strong> Prevención ART — Proyecto: ILT</p>
+            <p><strong>Tech:</strong> Vue.js, .NET Core, SQL Server</p>
+            <ul>
+              <li>Desarrollo de reglas de negocio y front‑end con framework basado en Vue.js (Natal).</li>
+              <li>Coverage con pruebas unitarias y adopción de flujo <em>gitflow</em> con <em>code review</em>.</li>
+              <li>Integración con base de datos SQL Server del cliente.</li>
+              <li>Soporte y mantenimiento correctivo/evolutivo.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="exp">
+          <div>
+            <h3>TGV · Desarrollador</h3>
+            <div class="muted">04/2020 — 12/2020</div>
+          </div>
+          <div>
+            <p><strong>Cliente:</strong> Banco Comafi — Proyecto: Rating App</p>
+            <p><strong>Tech:</strong> Java 8, Spring Boot (API REST), Angular, SQL Server</p>
+            <ul>
+              <li>Desarrollo desde cero de aplicación web para migración funcional.</li>
+              <li>Diseño y mantenimiento de base de datos SQL Server.</li>
+              <li>Documentación para soporte, front‑end Angular y mantenimiento de back‑end.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="exp">
+          <div>
+            <h3>Heaven Solutions Factory · Desarrollador</h3>
+            <div class="muted">02/2016 — 12/2017</div>
+          </div>
+          <div>
+            <p><strong>Productos:</strong> Heaven ERP, Heaven Commerce & API</p>
+            <p><strong>Tech:</strong> Xamarin, C#/VB.NET, SQL Server</p>
+            <ul>
+              <li>Definición e implementación de requerimientos de producto.</li>
+              <li>Creación y configuración de bases de datos Microsoft SQL Server.</li>
+              <li>Documentación para el área de soporte.</li>
+              <li>Integraciones con Mercado Libre y Tienda Nube.</li>
+              <li>Mantenimiento de app Xamarin.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="tecnica" class="two-cols">
+      <div class="card">
+        <h2>Especialización técnica</h2>
+        <div class="stack" style="margin-bottom:8px">
+          <span class="chip">C#</span>
+          <span class="chip">VB.NET</span>
+          <span class="chip">Java</span>
+          <span class="chip">Python</span>
+          <span class="chip">JavaScript</span>
+          <span class="chip">TypeScript</span>
+          <span class="chip">SQL Server</span>
+          <span class="chip">Windows · macOS · Ubuntu</span>
+        </div>
+        <p class="muted">Buenas prácticas: pruebas unitarias, documentación, integración continua, calidad estática (SonarQube), control de versiones con Git.</p>
+      </div>
+      <div class="card">
+        <h2>Educación</h2>
+        <ul>
+          <li><strong>Ingeniería en Informática</strong>, UADE — 2019 / Actualidad</li>
+          <li><strong>Ciclo Superior de Electrónica</strong>, ECEA — 2008 / 2014</li>
+        </ul>
+        <h3 style="margin-top:14px">Cursos</h3>
+        <ul>
+          <li>Identidad e Imagen Profesional — CapacitArte (Daniela Aruj), 2015</li>
+          <li>Desarrollo móvil con Ionic — Coderhouse, 2015</li>
+        </ul>
+        <h3 style="margin-top:14px">Idiomas</h3>
+        <p>Inglés técnico.</p>
+      </div>
+    </section>
+
+    <section id="contacto" class="grid" aria-label="Contacto">
+      <div class="card">
+        <h2>Contacto</h2>
+        <div class="contact">
+          <a class="btn primary" href="mailto:fdealesandro@tgv.com.ar">Email</a>
+          <a class="btn" href="https://wa.me/549" target="_blank" rel="noopener">WhatsApp</a>
+          <a class="btn" href="#" onclick="navigator.clipboard.writeText('Franco De Alesandro — Programador | fdealesandro@tgv.com.ar'); this.textContent='Copiado ✔'; setTimeout(()=>this.textContent='Copiar datos',1500); return false;">Copiar datos</a>
+        </div>
+        <div class="print-tip" style="margin-top:14px">
+          <strong>Tip:</strong> usá el botón <em>Imprimir / Guardar PDF</em> para generar tu CV en PDF desde esta misma página.
+        </div>
+        <p class="muted" style="margin-top:10px">Dirección: Joaquín Spandonari 2684, Caseros, Provincia de Buenos Aires · DNI: 38.991.911 · CUIT: 20-38991911-0</p>
+      </div>
+    </section>
+
+    <footer>
+      <span class="muted">Actualizado · 2020 — single‑file</span>
+      <span class="hint">Hecho con HTML/CSS/JS puro · sin dependencias</span>
+    </footer>
+  </div>
+</body>
+</html>
