@@ -1,270 +1,517 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Franco De Alesandro — CV / Programador</title>
-  <meta name="description" content="CV de Franco De Alesandro: desarrollador de software con experiencia en .NET, Java, Angular, Vue.js, SQL Server y Xamarin." />
-  <meta property="og:title" content="Franco De Alesandro — Programador" />
-  <meta property="og:description" content="Desarrollador full‑stack con experiencia en TGV y proyectos para ART y banca. .NET, Java, Angular, Vue.js, SQL Server." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 630'%3E%3Crect width='1200' height='630' fill='%23111'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%23fff' font-size='56' font-family='Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, sans-serif'%3EFranco De Alesandro%3C/text%3E%3C/svg%3E" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23000'/%3E%3Ctext x='50' y='62' font-size='60' text-anchor='middle' fill='%23fff' font-family='Inter, system-ui' %3EF%3C/text%3E%3C/svg%3E" />
-  <style>
-    :root {
-      --bg: #0b0c0f;
-      --card: #12141a;
-      --muted: #cfd3dc;
-      --text: #eef2f7;
-      --accent: #7cddff;
-      --accent-2: #8b5cf6;
-      --border: #242a35;
-      --shadow: 0 10px 30px rgba(0,0,0,.35);
-    }
-    @media (prefers-color-scheme: light){
-      :root { --bg:#f7fafc; --card:#ffffff; --text:#111827; --muted:#4b5563; --border:#e5e7eb; --shadow:0 8px 24px rgba(17,24,39,.08) }
-    }
-    * { box-sizing: border-box; }
-    html, body { height: 100%; }
-    body {
-      margin: 0; background: radial-gradient(1200px 800px at top right, rgba(124,221,255,.15), transparent), var(--bg);
-      color: var(--text); font: 16px/1.6 Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, sans-serif;
-      -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
-    }
-    a { color: inherit; text-decoration: none; }
-    .wrap { max-width: 1100px; margin: 0 auto; padding: 24px; }
-    header { display:flex; align-items:center; justify-content:space-between; gap:16px; }
-    .brand { display:flex; align-items:center; gap:14px; }
-    .avatar {
-      width: 56px; height: 56px; border-radius: 14px; background: linear-gradient(135deg, var(--accent), var(--accent-2));
-      display:grid; place-items:center; color:#0b0c0f; font-weight:800; box-shadow: var(--shadow);
-    }
-    nav { display:flex; gap:18px; flex-wrap:wrap; }
-    nav a { opacity:.85; padding:6px 10px; border-radius: 8px; border:1px solid transparent; }
-    nav a:hover { border-color: var(--border); opacity:1 }
-    .hero { display:grid; grid-template-columns: 1.2fr .8fr; gap:28px; align-items:center; margin: 28px 0 10px; }
-    .hero h1 { font-size: clamp(28px, 4vw, 44px); line-height:1.15; margin: 0 0 10px; }
-    .subtitle { font-size: clamp(16px, 2.2vw, 20px); color: var(--muted); margin: 0 0 18px; }
-    .badges { display:flex; flex-wrap:wrap; gap:10px; }
-    .badge { padding: 8px 12px; border-radius: 999px; border:1px solid var(--border); background: linear-gradient(180deg, rgba(255,255,255,.04), transparent); font-size: 13px; }
-    .cta { display:flex; gap:12px; margin-top: 18px; }
-    .btn { padding: 12px 16px; border-radius: 12px; border:1px solid var(--border); background: var(--card); box-shadow: var(--shadow); font-weight:600; }
-    .btn.primary { background: linear-gradient(135deg, var(--accent), var(--accent-2)); color:#0b0c0f; }
-    .grid { display:grid; grid-template-columns: repeat(12, 1fr); gap: 18px; }
-    .card { grid-column: span 12; background: var(--card); border:1px solid var(--border); border-radius: 18px; padding: 20px; box-shadow: var(--shadow); }
-    h2 { margin: 6px 0 12px; font-size: 22px; }
-    h3 { margin: 0 0 8px; font-size: 16px; letter-spacing:.2px }
-    .muted { color: var(--muted); font-size: 14px; }
-    .stack { display:flex; flex-wrap:wrap; gap: 8px; }
-    .stack .chip { font-size: 12px; padding: 6px 10px; border:1px dashed var(--border); border-radius: 999px; }
-    .exp { display:grid; grid-template-columns: 1fr 3fr; gap: 16px; border-top:1px dashed var(--border); padding-top: 14px; margin-top: 14px; }
-    .exp:first-of-type { border-top: none; padding-top:0; margin-top:0 }
-    .exp ul { margin: 8px 0 0 18px; }
-    .exp ul li { margin: 6px 0 }
-    .two-cols { display:grid; grid-template-columns: 1fr 1fr; gap: 18px; }
-    footer { margin: 28px 0 10px; display:flex; align-items:center; justify-content:space-between; gap:10px; flex-wrap:wrap; }
-    .contact { display:flex; gap:12px; flex-wrap:wrap; }
-    .hint { font-size: 12px; color: var(--muted); }
-    .print-tip { padding: 10px 12px; border:1px dashed var(--border); border-radius: 12px; }
-    @media (max-width: 880px){ .hero { grid-template-columns: 1fr } .two-cols{ grid-template-columns: 1fr } }
-
-    /* Print-friendly */
-    @media print {
-      body { background:#fff; color:#111 }
-      .btn, nav, .print-tip { display:none !important }
-      .card { box-shadow:none }
-      .wrap { padding:0 }
-      .avatar { box-shadow:none }
-    }
-  </style>
-  <script>
-    // Simple theme toggle (keeps things single-file)
-    function toggleTheme(){
-      const light = document.documentElement.dataset.theme === 'light';
-      if(light){ delete document.documentElement.dataset.theme; localStorage.removeItem('theme'); }
-      else { document.documentElement.dataset.theme = 'light'; localStorage.setItem('theme','light'); }
-    }
-    (function(){ if(localStorage.getItem('theme')==='light'){ document.documentElement.dataset.theme='light'; } })();
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Franco De Alesandro",
-    "description": "Desarrollador de software (.NET, Java, Angular, Vue.js, SQL Server, Xamarin)",
-    "email": "mailto:fdealesandro@tgv.com.ar",
-    "jobTitle": "Programador / Desarrollador de Software",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Caseros",
-      "addressRegion": "Buenos Aires",
-      "addressCountry": "AR"
-    },
-    "url": "",
-    "knowsAbout": [".NET", "C#", "Java", "Angular", "Vue.js", "SQL Server", "Xamarin", "TypeScript", "JavaScript", "APIs REST"],
-    "alumniOf": [{"@type":"CollegeOrUniversity","name":"UADE"}]
-  }
-  </script>
+<meta charset="utf-8">
+<title>Franco De Alesandro · Desarrollador de Software</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Franco De Alesandro — Desarrollador full-stack. .NET, Xamarin/MAUI, Java, Angular, Vue.js, SQL Server. Buenos Aires, Argentina.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:#150828;-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}
+@media(max-width:900px){
+  .hero-grid{grid-template-columns:1fr!important}
+  .exp-row{grid-template-columns:1fr!important}
+  .stack-grid{grid-template-columns:1fr 1fr!important}
+  .edu-grid{grid-template-columns:1fr!important}
+  .nav-links{display:none!important}
+  .hero-h1{font-size:52px!important}
+}
+@media print{
+  .no-print{display:none!important}
+  nav{position:static!important}
+  body{background:#fff}
+}
+</style>
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <div class="brand" aria-label="Identidad">
-        <div class="avatar" aria-hidden="true">F</div>
-        <div>
-          <strong style="font-size:18px">Franco De Alesandro</strong><br/>
-          <span class="muted">Programador · Full‑Stack</span>
-        </div>
-      </div>
-      <nav aria-label="Secciones">
-        <a href="#sobre-mi">Sobre mí</a>
-        <a href="#experiencia">Experiencia</a>
-        <a href="#tecnica">Tecnología</a>
-        <a href="#educacion">Educación</a>
-        <a href="#contacto">Contacto</a>
-        <a class="btn" href="#" onclick="toggleTheme();return false" title="Alternar tema">Tema</a>
-      </nav>
-    </header>
+<div id="root"></div>
+<script type="text/babel">
 
-    <section class="hero" id="sobre-mi">
-      <div>
-        <h1>Desarrollador de software con foco en productos y calidad</h1>
-        <p class="subtitle">+4 años construyendo sistemas a medida para software factories y clientes corporativos. Experiencia en <strong>.NET</strong>, <strong>Java</strong>, <strong>Angular</strong>, <strong>Vue.js</strong>, <strong>SQL Server</strong> y <strong>Xamarin</strong>.</p>
-        <div class="badges">
-          <span class="badge">Full‑Stack</span>
-          <span class="badge">APIs REST</span>
-          <span class="badge">Gitflow · CI</span>
-          <span class="badge">Pruebas unitarias</span>
-          <span class="badge">Soporte & documentación</span>
-        </div>
-        <div class="cta">
-          <a class="btn primary" href="#contacto">Contactar</a>
-          <a class="btn" href="javascript:window.print()">Imprimir / Guardar PDF</a>
-        </div>
-      </div>
-      <div class="card">
-        <h2 style="margin-top:0">Resumen</h2>
-        <p>Programador con experiencia entregando features de negocio end‑to‑end, integrando bases de datos <strong>SQL Server</strong>, desarrollando <strong>front‑end</strong> moderno y manteniendo <strong>back‑end</strong> escalable. Trabajo en equipo con metodologías y buenas prácticas (gitflow, code review, SonarQube).</p>
-        <div class="stack" aria-label="Stack principal">
-          <span class="chip">C# · .NET</span>
-          <span class="chip">Java · Spring Boot</span>
-          <span class="chip">Angular</span>
-          <span class="chip">Vue.js</span>
-          <span class="chip">TypeScript</span>
-          <span class="chip">JavaScript</span>
-          <span class="chip">SQL Server</span>
-          <span class="chip">Xamarin</span>
-        </div>
-      </div>
-    </section>
+/* ─── tokens ─────────────────────────────────────── */
+const C = {
+  violeta:   '#2D1052',
+  magenta:   '#FF3C7E',
+  lila:      '#C084FC',
+  lavanda:   '#F0E8FF',
+  obsidiana: '#150828',
+  ink2:      '#C9B8E8',
+  ink3:      '#8B7AB0',
+  line:      'rgba(240,232,255,0.14)',
+  lineMd:    'rgba(240,232,255,0.26)',
+  surf:      'rgba(240,232,255,0.05)',
+};
+const F = {
+  serif: '"Instrument Serif","Times New Roman",serif',
+  sans:  '"IBM Plex Sans",-apple-system,sans-serif',
+  mono:  '"JetBrains Mono",ui-monospace,monospace',
+};
+const W = { maxWidth:1100, margin:'0 auto', padding:'0 40px' };
 
-    <section id="experiencia" class="grid" aria-label="Experiencia profesional">
-      <div class="card">
-        <h2>Experiencia</h2>
+/* ─── [f] mark ───────────────────────────────────── */
+const FMark = ({ size = 36 }) => {
+  const bw  = size * 0.21;
+  const sw  = Math.max(1, size * 0.065);
+  const pad = Math.max(0.8, size * 0.04);
+  const fSz = size * 0.58;
+  const fY  = size * 0.765;
+  return (
+    <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`} fill="none">
+      <path d={`M${bw} ${size*0.09} L${pad} ${size*0.09} L${pad} ${size*0.91} L${bw} ${size*0.91}`}
+        stroke={C.lavanda} strokeWidth={sw} strokeLinecap="round" strokeLinejoin="round"/>
+      <path d={`M${size-bw} ${size*0.09} L${size-pad} ${size*0.09} L${size-pad} ${size*0.91} L${size-bw} ${size*0.91}`}
+        stroke={C.lavanda} strokeWidth={sw} strokeLinecap="round" strokeLinejoin="round"/>
+      <text x={size/2} y={fY} fontFamily="'JetBrains Mono',monospace"
+        fontSize={fSz} fontWeight="500" fill={C.magenta} textAnchor="middle"
+        style={{fontFamily:"'JetBrains Mono',monospace"}}>f</text>
+    </svg>
+  );
+};
 
-        <article class="exp">
-          <div>
-            <h3>TGV · Desarrollador</h3>
-            <div class="muted">11/2018 — 12/2020</div>
-          </div>
-          <div>
-            <p><strong>Cliente:</strong> Prevención ART — Proyecto: ILT</p>
-            <p><strong>Tech:</strong> Vue.js, .NET Core, SQL Server</p>
-            <ul>
-              <li>Desarrollo de reglas de negocio y front‑end con framework basado en Vue.js (Natal).</li>
-              <li>Coverage con pruebas unitarias y adopción de flujo <em>gitflow</em> con <em>code review</em>.</li>
-              <li>Integración con base de datos SQL Server del cliente.</li>
-              <li>Soporte y mantenimiento correctivo/evolutivo.</li>
-            </ul>
-          </div>
-        </article>
+/* ─── atoms ──────────────────────────────────────── */
+const Lbl = ({ t }) => (
+  <span style={{ fontFamily:F.mono, fontSize:10, letterSpacing:'0.14em',
+    textTransform:'uppercase', color:C.ink3 }}>{t}</span>
+);
 
-        <article class="exp">
-          <div>
-            <h3>TGV · Desarrollador</h3>
-            <div class="muted">04/2020 — 12/2020</div>
-          </div>
-          <div>
-            <p><strong>Cliente:</strong> Banco Comafi — Proyecto: Rating App</p>
-            <p><strong>Tech:</strong> Java 8, Spring Boot (API REST), Angular, SQL Server</p>
-            <ul>
-              <li>Desarrollo desde cero de aplicación web para migración funcional.</li>
-              <li>Diseño y mantenimiento de base de datos SQL Server.</li>
-              <li>Documentación para soporte, front‑end Angular y mantenimiento de back‑end.</li>
-            </ul>
-          </div>
-        </article>
+const Chip = ({ label, hi }) => (
+  <span style={{
+    fontFamily:F.mono, fontSize:11,
+    color:  hi ? C.magenta : C.ink2,
+    background: hi ? 'rgba(255,60,126,0.1)' : C.surf,
+    border: `1px solid ${hi ? 'rgba(255,60,126,0.3)' : C.line}`,
+    borderRadius:20, padding:'4px 11px',
+    letterSpacing:'0.02em', whiteSpace:'nowrap',
+  }}>{label}</span>
+);
 
-        <article class="exp">
-          <div>
-            <h3>Heaven Solutions Factory · Desarrollador</h3>
-            <div class="muted">02/2016 — 12/2017</div>
-          </div>
-          <div>
-            <p><strong>Productos:</strong> Heaven ERP, Heaven Commerce & API</p>
-            <p><strong>Tech:</strong> Xamarin, C#/VB.NET, SQL Server</p>
-            <ul>
-              <li>Definición e implementación de requerimientos de producto.</li>
-              <li>Creación y configuración de bases de datos Microsoft SQL Server.</li>
-              <li>Documentación para el área de soporte.</li>
-              <li>Integraciones con Mercado Libre y Tienda Nube.</li>
-              <li>Mantenimiento de app Xamarin.</li>
-            </ul>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section id="tecnica" class="two-cols">
-      <div class="card">
-        <h2>Especialización técnica</h2>
-        <div class="stack" style="margin-bottom:8px">
-          <span class="chip">C#</span>
-          <span class="chip">VB.NET</span>
-          <span class="chip">Java</span>
-          <span class="chip">Python</span>
-          <span class="chip">JavaScript</span>
-          <span class="chip">TypeScript</span>
-          <span class="chip">SQL Server</span>
-          <span class="chip">Windows · macOS · Ubuntu</span>
-        </div>
-        <p class="muted">Buenas prácticas: pruebas unitarias, documentación, integración continua, calidad estática (SonarQube), control de versiones con Git.</p>
-      </div>
-      <div class="card">
-        <h2>Educación</h2>
-        <ul>
-          <li><strong>Ingeniería en Informática</strong>, UADE — 2019 / Actualidad</li>
-          <li><strong>Ciclo Superior de Electrónica</strong>, ECEA — 2008 / 2014</li>
-        </ul>
-        <h3 style="margin-top:14px">Cursos</h3>
-        <ul>
-          <li>Identidad e Imagen Profesional — CapacitArte (Daniela Aruj), 2015</li>
-          <li>Desarrollo móvil con Ionic — Coderhouse, 2015</li>
-        </ul>
-        <h3 style="margin-top:14px">Idiomas</h3>
-        <p>Inglés técnico.</p>
-      </div>
-    </section>
-
-    <section id="contacto" class="grid" aria-label="Contacto">
-      <div class="card">
-        <h2>Contacto</h2>
-        <div class="contact">
-          <a class="btn primary" href="mailto:fdealesandro@tgv.com.ar">Email</a>
-          <a class="btn" href="https://wa.me/549" target="_blank" rel="noopener">WhatsApp</a>
-          <a class="btn" href="#" onclick="navigator.clipboard.writeText('Franco De Alesandro — Programador | fdealesandro@tgv.com.ar'); this.textContent='Copiado ✔'; setTimeout(()=>this.textContent='Copiar datos',1500); return false;">Copiar datos</a>
-        </div>
-        <div class="print-tip" style="margin-top:14px">
-          <strong>Tip:</strong> usá el botón <em>Imprimir / Guardar PDF</em> para generar tu CV en PDF desde esta misma página.
-        </div>
-        <p class="muted" style="margin-top:10px">Dirección: Joaquín Spandonari 2684, Caseros, Provincia de Buenos Aires · DNI: 38.991.911 · CUIT: 20-38991911-0</p>
-      </div>
-    </section>
-
-    <footer>
-      <span class="muted">Actualizado · 2020 — single‑file</span>
-      <span class="hint">Hecho con HTML/CSS/JS puro · sin dependencias</span>
-    </footer>
+const ActiveBadge = () => (
+  <div style={{ display:'flex', alignItems:'center', gap:6, flexShrink:0,
+    background:'rgba(37,211,102,0.1)', border:'1px solid rgba(37,211,102,0.25)',
+    borderRadius:20, padding:'5px 12px' }}>
+    <div style={{ width:6, height:6, borderRadius:'50%', background:'#25D366',
+      boxShadow:'0 0 5px #25D366' }}/>
+    <span style={{ fontFamily:F.mono, fontSize:10, color:'#25D366', letterSpacing:'0.07em' }}>
+      ACTIVO
+    </span>
   </div>
+);
+
+/* ─── nav ────────────────────────────────────────── */
+const Nav = () => (
+  <nav style={{ position:'sticky', top:0, zIndex:100,
+    background:'rgba(21,8,40,0.92)', backdropFilter:'blur(14px)',
+    borderBottom:`1px solid ${C.line}` }}>
+    <div style={{ ...W, display:'flex', justifyContent:'space-between',
+      alignItems:'center', height:64 }}>
+      <div style={{ display:'flex', alignItems:'center', gap:12 }}>
+        <FMark size={28}/>
+        <span style={{ fontFamily:F.mono, fontSize:16, fontWeight:500,
+          color:C.lavanda, letterSpacing:'-0.03em' }}>fdealesandro</span>
+      </div>
+      <div className="nav-links" style={{ display:'flex', gap:32 }}>
+        {[['#experiencia','Experiencia'],['#stack','Stack'],
+          ['#educacion','Educación'],['#contacto','Contacto']].map(([h,l]) => (
+          <a key={h} href={h} style={{ fontFamily:F.sans, fontSize:13,
+            fontWeight:300, color:C.ink2 }}>{l}</a>
+        ))}
+      </div>
+      <button className="no-print" onClick={()=>window.print()}
+        style={{ background:'transparent', border:`1px solid ${C.lineMd}`,
+          color:C.lavanda, borderRadius:20, padding:'7px 18px',
+          fontFamily:F.sans, fontSize:12, fontWeight:500, cursor:'pointer' }}>
+        Descargar PDF
+      </button>
+    </div>
+  </nav>
+);
+
+/* ─── hero ───────────────────────────────────────── */
+const Hero = () => (
+  <section style={{ ...W, padding:'80px 40px' }}>
+    <div className="hero-grid" style={{ display:'grid',
+      gridTemplateColumns:'1.1fr 0.9fr', gap:64, alignItems:'center' }}>
+
+      {/* copy */}
+      <div style={{ display:'flex', flexDirection:'column', gap:24 }}>
+        <Lbl t="Desarrollador de Software · Buenos Aires, Argentina"/>
+        <h1 className="hero-h1" style={{ fontFamily:F.serif, fontSize:76, lineHeight:0.93,
+          color:C.lavanda, letterSpacing:'-0.03em' }}>
+          Construyo<br/>
+          software que<br/>
+          <span style={{ fontStyle:'italic', color:C.magenta }}>conecta</span><br/>
+          sistemas.
+        </h1>
+        <p style={{ fontFamily:F.sans, fontSize:16, fontWeight:300,
+          color:C.ink2, lineHeight:1.65, maxWidth:460 }}>
+          +9 años construyendo sistemas a medida para clientes corporativos. Especializado en .NET, Xamarin/MAUI, Java, Angular, Vue.js y SQL Server.
+        </p>
+        <div style={{ display:'flex', flexWrap:'wrap', gap:8 }}>
+          {['Full-Stack','Mobile · Xamarin/MAUI','APIs REST','.NET · Java','SQL Server'].map(b => (
+            <Chip key={b} label={b}/>
+          ))}
+        </div>
+        <div className="no-print" style={{ display:'flex', gap:12, flexWrap:'wrap' }}>
+          <a href="#contacto" style={{ background:C.magenta, color:'white',
+            borderRadius:10, padding:'13px 28px',
+            fontFamily:F.sans, fontSize:14, fontWeight:600, cursor:'pointer' }}>
+            Contactar
+          </a>
+          <button onClick={()=>window.print()} style={{
+            background:'transparent', border:`1px solid ${C.lineMd}`,
+            color:C.lavanda, borderRadius:10, padding:'13px 24px',
+            fontFamily:F.sans, fontSize:14, cursor:'pointer' }}>
+            Descargar PDF
+          </button>
+        </div>
+        <div style={{ display:'flex', gap:40, paddingTop:20, borderTop:`1px solid ${C.line}` }}>
+          {[{v:'+9 años',l:'de experiencia'},{v:'3',l:'empresas'},{v:'Full',l:'Stack + Mobile'}].map((s,i)=>(
+            <div key={i} style={{ display:'flex', flexDirection:'column', gap:3 }}>
+              <span style={{ fontFamily:F.mono, fontSize:22, fontWeight:600,
+                color:C.magenta, letterSpacing:'-0.03em' }}>{s.v}</span>
+              <span style={{ fontFamily:F.sans, fontSize:12, fontWeight:300, color:C.ink3 }}>{s.l}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* current role card */}
+      <div style={{ background:C.surf, border:`1px solid ${C.lineMd}`,
+        borderRadius:18, padding:'28px', display:'flex', flexDirection:'column', gap:20,
+        boxShadow:'0 32px 80px rgba(0,0,0,0.5)' }}>
+
+        <div style={{ display:'flex', alignItems:'flex-start', justifyContent:'space-between', gap:12 }}>
+          <div style={{ display:'flex', flexDirection:'column', gap:5 }}>
+            <Lbl t="Actualmente"/>
+            <div style={{ fontFamily:F.sans, fontSize:20, fontWeight:600, color:C.lavanda, marginTop:4 }}>
+              TGV
+            </div>
+            <div style={{ fontFamily:F.sans, fontSize:14, fontWeight:300, color:C.ink2 }}>
+              Desarrollador Mobile · Sancor Seguros
+            </div>
+          </div>
+          <ActiveBadge/>
+        </div>
+
+        <div style={{ display:'flex', alignItems:'center', gap:10,
+          padding:'12px 14px', background:C.obsidiana,
+          border:`1px solid ${C.line}`, borderRadius:10 }}>
+          <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
+            <rect x="1" y="1.5" width="11" height="10.5" rx="2" stroke={C.ink3} strokeWidth="1.2"/>
+            <path d="M4 1v2M9 1v2M1 4.5h11" stroke={C.ink3} strokeWidth="1.2" strokeLinecap="round"/>
+          </svg>
+          <span style={{ fontFamily:F.mono, fontSize:12, color:C.ink2 }}>
+            Sep 2021 → Presente
+          </span>
+          <span style={{ marginLeft:'auto', fontFamily:F.mono, fontSize:11, color:C.ink3 }}>
+            ≈ 4 años
+          </span>
+        </div>
+
+        <div style={{ display:'flex', flexDirection:'column', gap:8 }}>
+          <Lbl t="Stack actual"/>
+          <div style={{ display:'flex', flexWrap:'wrap', gap:6, marginTop:4 }}>
+            {['Xamarin Forms','MAUI','C#','SQL Server','Git','Jira'].map(t=>(
+              <Chip key={t} label={t}/>
+            ))}
+          </div>
+        </div>
+
+        <div style={{ padding:'14px',
+          background:'rgba(255,60,126,0.05)',
+          border:'1px solid rgba(255,60,126,0.15)', borderRadius:10 }}>
+          <p style={{ fontFamily:F.sans, fontSize:13, fontWeight:300,
+            color:C.ink2, lineHeight:1.6 }}>
+            Mantenimiento y evolución de la app mobile de Sancor Seguros.
+            Migración de Xamarin Forms a <strong style={{ color:C.lavanda, fontWeight:500 }}>
+            .NET MAUI</strong>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+);
+
+/* ─── experiencia ────────────────────────────────── */
+const EXP = [
+  {
+    company:'TGV', role:'Desarrollador Mobile',
+    client:'Sancor Seguros — NGDI', period:'Sep 2021 → Presente', current:true,
+    tech:['Xamarin Forms','MAUI','C#','SQL Server','Git','Jira / Teams'],
+    desc:'Mantenimiento y evolución de la app mobile de Sancor Seguros. Migración progresiva de Xamarin Forms a .NET MAUI.',
+  },
+  {
+    company:'TGV', role:'Desarrollador Backend',
+    client:'Sancor Seguros — NOVA', period:'Ene 2021 → Sep 2021',
+    tech:['Java 7','Webex API','SOAP / REST','SQL Server','Jira / Teams'],
+    desc:'Integraciones con Webex y servicios internos SOAP/REST. Mantenimiento de módulos de backend corporativo.',
+  },
+  {
+    company:'TGV', role:'Desarrollador Full-Stack',
+    client:'Banco Comafi — Rating App', period:'May 2020 → Ene 2021',
+    tech:['Java 8','Spring Boot','Angular','TypeScript','SQL Server','GitFlow'],
+    desc:'Desarrollo desde cero de aplicación web para migración funcional. Diseño y mantenimiento de base de datos SQL Server. Documentación para soporte.',
+  },
+  {
+    company:'TGV', role:'Desarrollador Full-Stack',
+    client:'Sancor Seguros — Prevención ART', period:'Nov 2018 → May 2020',
+    tech:['.NET Core','C#','Vue.js','TypeScript','SQL Server','SonarQube','GitFlow'],
+    desc:'Desarrollo de reglas de negocio y front-end con Natal Framework. Coverage con pruebas unitarias y code review. Integración con SQL Server del cliente.',
+  },
+  {
+    company:'Heaven Solutions Factory', role:'Full Stack Developer',
+    client:'Heaven · Heaven ERP e Integraciones', period:'Feb 2016 → Ene 2018',
+    tech:['C#','VB.NET','Xamarin','SQL Server','MercadoLibre API','TiendaNube API','Scrum'],
+    desc:'Definición e implementación de requerimientos. Integraciones con Mercado Libre y Tienda Nube. App Xamarin mobile y base de datos SQL Server.',
+  },
+];
+
+const Experience = () => (
+  <section id="experiencia" style={{ background:C.violeta }}>
+    <div style={{ ...W, padding:'72px 40px' }}>
+      <div style={{ marginBottom:40 }}>
+        <Lbl t="Experiencia profesional"/>
+        <h2 style={{ fontFamily:F.serif, fontSize:48, lineHeight:1.05,
+          color:C.lavanda, marginTop:10, letterSpacing:'-0.02em' }}>
+          Historial de<br/><span style={{ fontStyle:'italic' }}>proyectos</span>
+        </h2>
+      </div>
+      <div style={{ display:'flex', flexDirection:'column', gap:14 }}>
+        {EXP.map((e,i) => (
+          <div key={i} className="exp-row" style={{
+            display:'grid', gridTemplateColumns:'200px 1fr', gap:0,
+            background: e.current ? 'rgba(255,60,126,0.07)' : C.surf,
+            border:`1px solid ${e.current ? 'rgba(255,60,126,0.25)' : C.line}`,
+            borderRadius:14, overflow:'hidden',
+          }}>
+            {/* meta */}
+            <div style={{ padding:'22px', borderRight:`1px solid ${C.line}`,
+              display:'flex', flexDirection:'column', gap:7,
+              background:'rgba(0,0,0,0.1)' }}>
+              <div style={{ fontFamily:F.sans, fontSize:15, fontWeight:600, color:C.lavanda }}>
+                {e.company}
+              </div>
+              <div style={{ fontFamily:F.sans, fontSize:12, fontWeight:300, color:C.ink2, lineHeight:1.4 }}>
+                {e.role}
+              </div>
+              <div style={{ fontFamily:F.mono, fontSize:11, color:C.ink3,
+                letterSpacing:'0.02em', marginTop:4, lineHeight:1.5 }}>{e.period}</div>
+              {e.current && (
+                <div style={{ display:'flex', alignItems:'center', gap:5, marginTop:2 }}>
+                  <div style={{ width:5, height:5, borderRadius:'50%', background:'#25D366',
+                    boxShadow:'0 0 4px #25D366' }}/>
+                  <span style={{ fontFamily:F.mono, fontSize:9, color:'#25D366',
+                    letterSpacing:'0.08em' }}>ACTIVO</span>
+                </div>
+              )}
+            </div>
+            {/* detail */}
+            <div style={{ padding:'22px', display:'flex', flexDirection:'column', gap:12 }}>
+              <div>
+                <Lbl t="Cliente · Proyecto"/>
+                <div style={{ fontFamily:F.sans, fontSize:14, fontWeight:500,
+                  color:C.lavanda, marginTop:5 }}>{e.client}</div>
+              </div>
+              <p style={{ fontFamily:F.sans, fontSize:13, fontWeight:300,
+                color:C.ink2, lineHeight:1.6 }}>{e.desc}</p>
+              <div style={{ display:'flex', flexWrap:'wrap', gap:6 }}>
+                {e.tech.map(t => <Chip key={t} label={t}/>)}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+);
+
+/* ─── stack ──────────────────────────────────────── */
+const STACK = [
+  { cat:'Backend',       items:['C# · .NET','Java · Spring Boot','VB.NET','Python'] },
+  { cat:'Frontend',      items:['Angular','Vue.js','TypeScript','JavaScript'] },
+  { cat:'Mobile',        items:['Xamarin Forms','.NET MAUI','Android','iOS'] },
+  { cat:'Datos & Infra', items:['SQL Server','Git · GitFlow','CI/CD','SonarQube'] },
+  { cat:'Metodologías',  items:['Scrum · Agile','Code Review','Pruebas unitarias','Jira'] },
+  { cat:'Integraciones', items:['MercadoLibre','TiendaNube','Webex','SOAP · REST'] },
+];
+
+const Stack = () => (
+  <section id="stack" style={{ background:C.obsidiana }}>
+    <div style={{ ...W, padding:'72px 40px' }}>
+      <div style={{ marginBottom:40 }}>
+        <Lbl t="Especialización técnica"/>
+        <h2 style={{ fontFamily:F.serif, fontSize:48, lineHeight:1.05,
+          color:C.lavanda, marginTop:10, letterSpacing:'-0.02em' }}>
+          Stack <span style={{ fontStyle:'italic' }}>técnico</span>
+        </h2>
+      </div>
+      <div className="stack-grid" style={{ display:'grid',
+        gridTemplateColumns:'repeat(3,1fr)', gap:14 }}>
+        {STACK.map((s,i) => (
+          <div key={i} style={{ background:C.surf, border:`1px solid ${C.line}`,
+            borderRadius:14, padding:'22px',
+            display:'flex', flexDirection:'column', gap:12 }}>
+            <Lbl t={s.cat}/>
+            <div style={{ display:'flex', flexWrap:'wrap', gap:7, marginTop:2 }}>
+              {s.items.map(it => <Chip key={it} label={it}/>)}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+);
+
+/* ─── educación ──────────────────────────────────── */
+const EDU = [
+  { title:'Ingeniería en Informática',   inst:'UADE',   period:'2019 → 2023', type:'Grado universitario' },
+  { title:'Ingeniería en Computación',   inst:'UNTREF', period:'2015 → 2018', type:'Grado universitario' },
+  { title:'Técnico Electrónico',         inst:'ECEA',   period:'2009 → 2014', type:'Secundaria técnica' },
+];
+const CERTS = [
+  'CCNA: Introduction to Networks',
+  'Congreso Internacional de Educación Emocional y Coaching Ontológico',
+];
+
+const Education = () => (
+  <section id="educacion" style={{ background:C.violeta }}>
+    <div style={{ ...W, padding:'72px 40px' }}>
+      <div style={{ marginBottom:40 }}>
+        <Lbl t="Formación"/>
+        <h2 style={{ fontFamily:F.serif, fontSize:48, lineHeight:1.05,
+          color:C.lavanda, marginTop:10, letterSpacing:'-0.02em' }}>
+          Educación &<br/><span style={{ fontStyle:'italic' }}>certificaciones</span>
+        </h2>
+      </div>
+      <div className="edu-grid" style={{ display:'grid',
+        gridTemplateColumns:'2fr 1fr', gap:20 }}>
+
+        {/* educación */}
+        <div style={{ display:'flex', flexDirection:'column', gap:10 }}>
+          {EDU.map((e,i) => (
+            <div key={i} style={{ display:'flex', justifyContent:'space-between',
+              alignItems:'center', gap:20,
+              padding:'20px 22px', background:C.surf,
+              border:`1px solid ${C.line}`, borderRadius:12 }}>
+              <div style={{ display:'flex', flexDirection:'column', gap:4 }}>
+                <div style={{ fontFamily:F.sans, fontSize:15, fontWeight:600, color:C.lavanda }}>
+                  {e.title}
+                </div>
+                <div style={{ fontFamily:F.sans, fontSize:13, fontWeight:300, color:C.ink2 }}>
+                  {e.inst}
+                </div>
+                <Lbl t={e.type}/>
+              </div>
+              <span style={{ fontFamily:F.mono, fontSize:12, color:C.ink3,
+                textAlign:'right', flexShrink:0 }}>{e.period}</span>
+            </div>
+          ))}
+        </div>
+
+        {/* certs + idiomas */}
+        <div style={{ display:'flex', flexDirection:'column', gap:12 }}>
+          <div style={{ background:C.surf, border:`1px solid ${C.line}`,
+            borderRadius:12, padding:'22px',
+            display:'flex', flexDirection:'column', gap:14 }}>
+            <Lbl t="Certificaciones"/>
+            <div style={{ display:'flex', flexDirection:'column', gap:10, marginTop:2 }}>
+              {CERTS.map((c,i) => (
+                <div key={i} style={{ display:'flex', gap:8, alignItems:'flex-start' }}>
+                  <div style={{ width:5, height:5, borderRadius:'50%', background:C.magenta,
+                    flexShrink:0, marginTop:5 }}/>
+                  <span style={{ fontFamily:F.sans, fontSize:13, fontWeight:300,
+                    color:C.ink2, lineHeight:1.55 }}>{c}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div style={{ background:C.surf, border:`1px solid ${C.line}`,
+            borderRadius:12, padding:'22px',
+            display:'flex', flexDirection:'column', gap:14 }}>
+            <Lbl t="Idiomas"/>
+            <div style={{ display:'flex', flexDirection:'column', gap:10, marginTop:2 }}>
+              {[{l:'Español',n:'Nativo'},{l:'Inglés',n:'Técnico'}].map((x,i) => (
+                <div key={i} style={{ display:'flex', justifyContent:'space-between', alignItems:'center' }}>
+                  <span style={{ fontFamily:F.sans, fontSize:13, fontWeight:500, color:C.lavanda }}>
+                    {x.l}
+                  </span>
+                  <span style={{ fontFamily:F.mono, fontSize:11, color:C.ink3, letterSpacing:'0.04em' }}>
+                    {x.n}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+);
+
+/* ─── contacto / cta ─────────────────────────────── */
+const Contact = () => (
+  <section id="contacto" style={{
+    background:`linear-gradient(180deg, ${C.obsidiana} 0%, ${C.violeta} 100%)`,
+    borderTop:`2px solid ${C.magenta}`,
+  }}>
+    <div style={{ maxWidth:1100, margin:'0 auto', padding:'100px 40px',
+      display:'flex', flexDirection:'column', alignItems:'center',
+      gap:20, textAlign:'center' }}>
+      <FMark size={52}/>
+      <h2 style={{ fontFamily:F.serif, fontSize:58, lineHeight:0.95,
+        color:C.lavanda, letterSpacing:'-0.03em' }}>
+        Hablemos.<br/>
+        <span style={{ fontStyle:'italic', color:C.lila }}>Estoy disponible.</span>
+      </h2>
+      <p style={{ fontFamily:F.sans, fontSize:16, fontWeight:300,
+        color:C.ink2, lineHeight:1.55, maxWidth:480 }}>
+        Abierto a propuestas, freelance o relación de dependencia.
+        Buenos Aires, Argentina.
+      </p>
+      <div className="no-print" style={{ display:'flex', gap:12, flexWrap:'wrap',
+        justifyContent:'center', marginTop:8 }}>
+        <a href="mailto:francodealesandro@gmail.com"
+          style={{ background:C.magenta, color:'white',
+            borderRadius:10, padding:'14px 28px',
+            fontFamily:F.sans, fontSize:14, fontWeight:600, cursor:'pointer' }}>
+          francodealesandro@gmail.com
+        </a>
+        <a href="https://www.linkedin.com/in/francodealesandro"
+          target="_blank" rel="noopener"
+          style={{ background:'transparent', border:`1px solid ${C.lineMd}`,
+            color:C.lavanda, borderRadius:10, padding:'14px 24px',
+            fontFamily:F.sans, fontSize:14, cursor:'pointer' }}>
+          LinkedIn →
+        </a>
+      </div>
+      <span style={{ fontFamily:F.mono, fontSize:11, color:C.ink3,
+        letterSpacing:'0.06em', marginTop:8 }}>
+        Villa Raffo · Provincia de Buenos Aires
+      </span>
+    </div>
+  </section>
+);
+
+/* ─── app ────────────────────────────────────────── */
+const App = () => (
+  <div style={{ background:C.obsidiana, color:C.lavanda }}>
+    <Nav/>
+    <Hero/>
+    <Experience/>
+    <Stack/>
+    <Education/>
+    <Contact/>
+  </div>
+);
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+</script>
 </body>
 </html>
